@@ -1,3 +1,4 @@
+import 'package:chatty_ui/pages/chat_page.dart';
 import 'package:chatty_ui/theme.dart';
 import 'package:chatty_ui/widgets/chat_tile.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,14 @@ class Home extends StatelessWidget {
     return Scaffold(
       backgroundColor: blueColor,
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: () {
+          Navigator.push(
+            context, 
+            MaterialPageRoute(
+              builder: (context) => const ChatPage(),
+            ),
+          );
+        },
         backgroundColor: greenColor,
         child: const Icon(
           Icons.add,
@@ -84,34 +92,6 @@ class Home extends StatelessWidget {
                         time: '2:30',
                         unread: false,
                       ),
-                      ChatTile(
-                        imageUrl: 'assets/images/user_pic_b.png',
-                        name: 'Chyntia',
-                        text: 'Find Here :P',
-                        time: '2:30',
-                        unread: false,
-                      ),
-                      ChatTile(
-                        imageUrl: 'assets/images/user_pic_a.png',
-                        name: 'Joshuer',
-                        text: 'Sorry, you’re not my ty...',
-                        time: 'Now',
-                        unread: true,
-                      ),
-                      ChatTile(
-                        imageUrl: 'assets/images/user_pic_d.png',
-                        name: 'Gabriella',
-                        text: 'I saw it clearly and mig...',
-                        time: '2:30',
-                        unread: false,
-                      ),
-                      ChatTile(
-                        imageUrl: 'assets/images/user_pic_b.png',
-                        name: 'Chyntia',
-                        text: 'Find Here :P',
-                        time: '2:30',
-                        unread: false,
-                      ),
                       SizedBox(
                         height: 30,
                       ),
@@ -139,6 +119,9 @@ class Home extends StatelessWidget {
                         text: 'The car which does not...',
                         time: '7:11',
                         unread: true,
+                      ),
+                      SizedBox(
+                        height: 150,
                       ),
                     ],
                   ),
